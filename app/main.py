@@ -1,7 +1,5 @@
 def format_linter_error(error: dict) -> dict:
-    # write your code here
-    return 
-    {
+    return {
         "line": error.get("line_number"),
         "column": error.get("column_number"),
         "message": error.get("text"),
@@ -18,13 +16,12 @@ error = {
     "text": "line too long (99 > 79 characters)",
     "physical_line": '    return f"I like to filter, rounding, doubling, '
     "store and decorate numbers: {', '.join(items)}!\"",
-    }
+}
 formatted_error = format_linter_error(error)
 print(formatted_error)
 
 
 def format_single_linter_file(file_path: str, errors: list) -> dict:
-    # write your code here
     return {"errors": errors,
             "path": file_path,
             "status": "failed"
@@ -49,14 +46,13 @@ errors = [
         "text": "no newline at end of file",
         "physical_line": '    return f"I like to filter, rounding, doubling, '
         "store and decorate numbers: {', '.join(items)}!\"",
-    },
+    }
 ]
 
 print(format_single_linter_file(file_path="./source_code_2.py", errors=errors))
 
 
 def format_linter_report(linter_report: dict) -> list:
-    # write your code here
     return [
         format_single_linter_file(file_path, errors) 
         for file_path, errors in linter_report.items()
