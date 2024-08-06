@@ -81,7 +81,7 @@ report_file = {
                 "physical_line": 'return f"I like to filter,rounding,doubling,'
                 "store and decorate numbers: {', '.join(items)}!\"",
             }
-        ]
+         ]
 }
 
 print(format_linter_report(linter_report=report_file))
